@@ -31,11 +31,17 @@ pub mod ccg;
 #[cfg(feature = "mg")]
 pub mod mg;
 
+#[cfg(feature = "tlg")]
+pub mod tlg;
+
 // Re-export commonly used items
 #[cfg(feature = "ccg")]
 pub use ccg::{CCGParser, CCGCategory, CCGNode};
 
 #[cfg(feature = "mg")]
 pub use mg::{MinimalistParser, Feature, LexicalItem as MGLexicalItem, DerivationTree};
+
+#[cfg(feature = "tlg")]
+pub use tlg::{TLGParser, Lexicon as TLGLexicon, LogicalType, Modality, ProofNode, ProofNet};
 
 pub use common::{FeatureValue, FeatureStructure, FeatureRegistry, Lexicon};
