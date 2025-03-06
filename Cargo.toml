@@ -18,9 +18,11 @@ env_logger = "0.11.6"
 criterion = "0.5"
 
 [features]
-default = ["ccg", "mg"]
+default = ["ccg", "mg", "lfg", "lrfg"]
 ccg = []             # Combinatory Categorial Grammar
 mg = []              # Minimalist Grammar
+lfg = []             # Lexical-Functional Grammar
+lrfg = []            # Lexical-Realizational Functional Grammar
 morphosyntax = []    # Enable morphosyntactic features
 multilingual = []    # Enable multilingual support
 
@@ -32,6 +34,14 @@ harness = false
 name = "mg_benchmarks"
 harness = false
 
+[[bench]]
+name = "lfg_benchmarks"
+harness = false
+
+[[bench]]
+name = "lrfg_benchmarks"
+harness = false
+
 [[example]]
 name = "ccg_examples"
 required-features = ["ccg"]
@@ -39,3 +49,11 @@ required-features = ["ccg"]
 [[example]]
 name = "mg_examples"
 required-features = ["mg"]
+
+[[example]]
+name = "lfg_examples"
+required-features = ["lfg"]
+
+[[example]]
+name = "lrfg_examples"
+required-features = ["lrfg"]

@@ -31,11 +31,23 @@ pub mod ccg;
 #[cfg(feature = "mg")]
 pub mod mg;
 
+#[cfg(feature = "lfg")]
+pub mod lfg;
+
+#[cfg(feature = "lrfg")]
+pub mod lrfg;
+
 // Re-export commonly used items
 #[cfg(feature = "ccg")]
 pub use ccg::{CCGParser, CCGCategory, CCGNode};
 
 #[cfg(feature = "mg")]
 pub use mg::{MinimalistParser, Feature, LexicalItem as MGLexicalItem, DerivationTree};
+
+#[cfg(feature = "lfg")]
+pub use lfg::{LFGParser, Category as LFGCategory, CNode, CStructure, FStructure};
+
+#[cfg(feature = "lrfg")]
+pub use lrfg::{LRFGParser, Category as LRFGCategory, LRFGNode};
 
 pub use common::{FeatureValue, FeatureStructure, FeatureRegistry, Lexicon};
