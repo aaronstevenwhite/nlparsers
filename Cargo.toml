@@ -1,0 +1,41 @@
+[package]
+name = "nlparsers"
+version = "0.1.0"
+edition = "2021"
+authors = ["Aaron Steven White <aaron.steven.white@gmail>"]
+description = "A comprehensive library for representing and parsing with various grammatical formalisms including CCG, Minimalist Grammar, Type-Logical Grammar, Lexical-Functional Grammar, and Head-Driven Phrase Structure Grammar"
+repository = "https://github.com/aaronstevenwhite/nlparsers"
+license = "MIT"
+keywords = ["nlp", "parser", "linguistics", "grammar", "syntax"]
+categories = ["text-processing", "science"]
+
+[dependencies]
+thiserror = "2.0.12"
+log = "0.4"
+
+[dev-dependencies]
+env_logger = "0.11.6"
+criterion = "0.5"
+
+[features]
+default = ["ccg", "mg"]
+ccg = []             # Combinatory Categorial Grammar
+mg = []              # Minimalist Grammar
+morphosyntax = []    # Enable morphosyntactic features
+multilingual = []    # Enable multilingual support
+
+[[bench]]
+name = "ccg_benchmarks"
+harness = false
+
+[[bench]]
+name = "mg_benchmarks"
+harness = false
+
+[[example]]
+name = "ccg_examples"
+required-features = ["ccg"]
+
+[[example]]
+name = "mg_examples"
+required-features = ["mg"]
