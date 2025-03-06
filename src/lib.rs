@@ -31,6 +31,9 @@ pub mod ccg;
 #[cfg(feature = "mg")]
 pub mod mg;
 
+#[cfg(feature = "hpsg")]
+pub mod hpsg;
+
 // Re-export commonly used items
 #[cfg(feature = "ccg")]
 pub use ccg::{CCGParser, CCGCategory, CCGNode};
@@ -38,4 +41,7 @@ pub use ccg::{CCGParser, CCGCategory, CCGNode};
 #[cfg(feature = "mg")]
 pub use mg::{MinimalistParser, Feature, LexicalItem as MGLexicalItem, DerivationTree};
 
-pub use common::{FeatureValue, FeatureStructure, FeatureRegistry, Lexicon};
+#[cfg(feature = "hpsg")]
+pub use hpsg::{HPSGParser, Rule, RuleSchema, Category, Sign, HeadFeaturePrinciple, ValencePrinciple, FeatureStructure};
+
+pub use common::{FeatureValue, FeatureRegistry, Lexicon};
